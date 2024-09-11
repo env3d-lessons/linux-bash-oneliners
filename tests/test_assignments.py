@@ -39,8 +39,8 @@ def test_q4():
     file_basic_check('q4.txt')
     
 def test_q4_content():
-    expected = set([l.split(',')[3] for l in open('tuition.csv').readlines()])
-    answer = set(os.popen('bash q4.txt').read().split('\n'))
+    expected = set([l.split(',')[3] for l in open('tuition.csv').readlines()[4:]])
+    answer = set(os.popen('bash q4.txt').read().strip().split('\n'))
     assert expected == answer    
     
 def test_q5():
